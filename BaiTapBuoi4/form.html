@@ -242,6 +242,60 @@
     <tr><td>Tổng cộng</td><td>7M</td></tr>
     </tfoot>
 </table>
+<!--
+1. Sự khác nhau giữa method="get" và method="post"
 
+- GET: Dữ liệu được gửi lên server thông qua URL (query string).
+  Ví dụ: /search?name=abc
+  Dữ liệu có thể nhìn thấy trên thanh địa chỉ và bị giới hạn độ dài.
+
+- POST: Dữ liệu được gửi trong phần body của HTTP request.
+  Không hiển thị trên URL và có thể gửi lượng dữ liệu lớn hơn.
+-->
+
+<!--
+2. Tại sao cần enctype="multipart/form-data" khi form có upload file?
+
+- Khi upload file, dữ liệu cần được gửi dưới dạng nhị phân.
+- enctype="multipart/form-data" cho phép chia request thành nhiều phần
+  để gửi cả file và dữ liệu form lên server.
+- Nếu không có thuộc tính này thì file sẽ không được upload đúng cách.
+-->
+
+<!--
+3. Trường type="hidden" có tác dụng gì? Người dùng có thể xem được không?
+
+- input type="hidden" dùng để gửi dữ liệu ẩn từ form lên server
+  mà không hiển thị trên giao diện.
+- Thường dùng để gửi id, token, hoặc trạng thái.
+- Người dùng vẫn có thể xem được bằng cách Inspect (F12) hoặc xem source HTML,
+  nên không dùng để lưu thông tin bảo mật.
+-->
+
+<!--
+4. Tại sao checkbox không được check thì không gửi lên server,
+   còn radio thì luôn gửi một giá trị?
+
+- Checkbox: chỉ gửi dữ liệu khi được check. Nếu không check thì
+  trình duyệt sẽ không gửi trường đó lên server.
+
+- Radio: các radio có cùng name thuộc một nhóm và người dùng
+  thường phải chọn một giá trị, vì vậy server sẽ nhận được
+  một giá trị được chọn trong nhóm đó.
+-->
+
+<!--
+5. Sự khác nhau giữa disabled và readonly
+
+- disabled:
+  + Không cho phép chỉnh sửa
+  + Không gửi dữ liệu lên server khi submit form
+  + Không thể focus vào input
+
+- readonly:
+  + Không cho phép chỉnh sửa
+  + Vẫn gửi dữ liệu lên server
+  + Có thể focus và copy giá trị
+-->
 </body>
 </html>
