@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <title>Document</title>
+    <style>
+        h1{
+            color:burlywood
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title" id="main" style="color:cornflowerblue" >HOME PAGE</h1>
+        <!--
+  
+    Phan tu nay co: tag(h1) + class(title) + id(special) + inline style
+    Selector thang: inline style vi inline có độ ưu tien cao nhất inline style > id > class > tag
+    Mau hien thi: cornflowerblue
+    -->
+    <h2 claass="title">Gioi thieu he thong</h2>
+    <h3 class="section">Cac khoa hoc noi bat</h3>
+    <p>HTML</p>
+    <p>CSS</p>
+    <p>Javascript</p>
+    <p>Python</p>
+    <hr>
+    <h3>Trả lời câu hỏi :</h3>
+        <p>
+    h1 và h2 đều dùng class title. Tuy nhiên h1 có thêm id main nên selector #main
+    có độ ưu tiên cao hơn .title. Vì vậy màu của h1 sẽ theo #main.
+    Còn h2 chỉ có class title nên sẽ lấy màu của .title trong theme.css.
+    </p>
+</body>
+</html>
