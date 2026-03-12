@@ -28,3 +28,31 @@ p{
 #special{
     color:indigo
 }
+
+/* 4 class thêm */
+.card{
+    color:darkorange;
+}
+.note{
+    color:teal;
+}
+.warning{
+    color:crimson;
+}
+.footer-text{
+    color:slateblue;
+}
+
+/* 4 id thêm */
+#header{
+    color:tomato;
+}
+#content{
+    color:olive;
+}
+#sidebar{
+    color:royalblue;
+}
+#footer{
+    color:chocolate;
+}
