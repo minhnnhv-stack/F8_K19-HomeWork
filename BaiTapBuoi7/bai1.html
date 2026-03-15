@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .config-container{
+            width: 100%;
+            max-width: 800px;
+            border: 2px solid #000;
+            background-color: #fff;
+        }
+        .header{
+            background-color: #f98000;
+            color: #f9fafb;
+            padding: 10px 15px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        /* .content{
+            padding: 15px;
+        } */
+        .section-title{
+            margin-top: 15px;
+            margin-bottom: 10px;
+            padding: 15px;
+            color: #333;
+        }
+
+        .color-selected-red:checked+ label{
+            color:#991b1b;
+            background-color: #fee2e2;
+        }
+        .color-selected-blue:checked+ label{
+            color:#1d4ed8;
+            background-color:#dbeafe;
+        }
+        .color-selected-green:checked+ label{
+            color:#166534;
+            background-color:#dcfce7;
+        }
+        #light-theme:checked+label{
+            color: #8b5e00;
+            background-color:#fff8cc   
+        }
+        #dark-theme:checked+label{
+            color: #f9fafb;
+            background-color: #111827;
+        }
+        #VI:checked+label{
+            color: #166534;
+            background-color:#bbf7d0;
+        }
+        #EN:checked+label{
+            color: #1d4ed8;
+            background-color:#bfdbfe;
+        }
+        #adv:checked+label{
+            color:#92400e ;
+            background-color: #fef3c7;
+        }
+        #eco:checked+label{
+            color:#15803d ;
+            background-color: #bbf7d0;
+        }
+        #import:checked+label{
+            color:#b91c1c ;
+            background-color: #fee2e2;
+        }
+        .result-group{
+             padding: 15px;
+             background-color: #eef2ff;
+             color: #4b5563;
+             
+        }
+        .row {
+            padding:12px 10px;
+            margin: 10px;
+        }
+        .content:has(#light-theme:checked) .result-group .light{
+            color:#111827;
+            background-color:#fff8cc;
+        }
+        .content:has(#dark-theme:checked) .result-group .light{
+            color:#f9fafb;
+            background-color:#111827;
+        }
+        .content:has(#red:checked) .result-group .red{
+            background:#fee2e2;
+            color:#7f1d1d;
+        }
+
+        .content:has(#blue:checked) .result-group .blue{
+            background:#dbeafe;
+            color:#1d4ed8;
+        }
+
+        .content:has(#green:checked) .result-group .green{
+            background:#dcfce7;
+            color:#166534;
+        }
+        .content:has(#VI:checked) .result-group .vi{
+            color:#166534;
+        }
+
+        .content:has(#EN:checked) .result-group .en{
+            color:#1d4ed8;
+        }
+        .content:has(#adv:checked) .result-group .adv{
+            background:#fef3c7;
+            color:#92400e;
+        }
+
+        .content:has(#eco:checked) .result-group .eco{
+            background:#bbf7d0;
+            color:#166534;
+        }
+
+        .content:has(#import:checked) .result-group .import{
+            background:#fee2e2;
+            color:#b91c1c;
+        }
+    </style>
+</head>
+<body>
+    <div class="config-container">
+        <div class="header">
+            Trung tâm cáu hình giao diện (Demo)
+        </div>
+
+        <div class="content">
+            <div class="section-title">Chọn giao diện (Them):</div>
+
+                <div class="option-group">
+                    <input type="radio" name="theme-color" id="light-theme">
+                    <label for="light-theme">Light</label>
+                    <input type="radio" name="theme-color" id="dark-theme">
+                    <label for="dark-theme">dark</label>
+                </div>
+                
+             <div class="section-title">Chọn màu chủ đạo (Color:)</div> 
+
+                <div class="option-group">
+                    <input type="radio" name="color" class="color-selected-red" id="red">
+                    <label for="red">Red</label>
+
+                    <input type="radio" name="color" class="color-selected-blue" id="blue">
+                    <label for="blue">Blue</label>
+
+                    <input type="radio" name="color" class="color-selected-green" id="green">
+                    <label for="green">Green</label>
+                </div>
+            
+            <div class="section-title">Chọn ngôn ngữ (Language):</div> 
+                
+                <div class="option-group">
+                    <input type="radio" name="lang-color" id="VI">
+                    <label for="VI">VI</label>
+                    <input type="radio" name="lang-color" id="EN">
+                    <label for="EN">EN</label>
+                </div>
+
+            <div class="section-title">Tùy chọn bổ xung (Options-Checkbox):</div>    
+                <div class="option-group">
+                    <input type="checkbox" name="option" id="adv">
+                    <label for="adv">Hiển thị mô tả nâng cao</label>
+                    <input type="checkbox" name="option" id="eco">
+                    <label for="eco">Bật chế độ Eco</label>
+                    <input type="checkbox" name="option" id="import">
+                    <label for="import">Hiển thị cảnh báo quan trọng</label>
+                </div>
+            
+            
+            <div class="result-group">
+                <div class="row light">Theme Light: Giao diện sáng, chữ đen.</div>
+                <div class="row dark">Theme Dark: Giao diện tối, chữ sáng.</div>
+
+                <div class="row red">Màu Red: được nhấn mạnh khi chọn Red.</div>
+                <div class="row blue">Màu Blue: được nhấn mạnh khi chọn Blue.</div>
+                <div class="row green">Màu Green: được nhấn mạnh khi chọn Green.</div>
+
+                <div class="row vi">[VI] Xin chào bạn! Khi chọn VI, dòng này rõ hơn.</div>
+                <div class="row en">[EN] Hello, world! Khi chọn EN, dòng này rõ hơn.</div>
+
+                <div class="row adv">Mô tả nâng cao: giải thích kỹ hơn về cách các lựa chọn đang ảnh hưởng giao diện.</div>
+                <div class="row eco">Chế độ Eco: mô phỏng trạng thái tiết kiệm tài nguyên cho giao diện.</div>
+                <div class="row import">Cảnh báo quan trọng: khu vực dùng để nhấn mạnh thông tin hệ thống.</div>
+
+            </div>
+            
+        </div>
+
+    </div>  
+  
+
+
+
+
+</body>
+</html>
