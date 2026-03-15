@@ -82,7 +82,7 @@
             color:#111827;
             background-color:#fff8cc;
         }
-        .content:has(#dark-theme:checked) .result-group .light{
+        .content:has(#dark-theme:checked) .result-group .dark{
             color:#f9fafb;
             background-color:#111827;
         }
@@ -102,11 +102,19 @@
         }
         .content:has(#VI:checked) .result-group .vi{
             color:#166534;
+            font-size: 1.05rem;
         }
-
+        .content:has(#VI:checked) .result-group .en{
+            color:#9ca3af; /* làm mờ EN khi chọn VI */
+        }
         .content:has(#EN:checked) .result-group .en{
             color:#1d4ed8;
+            font-size: 1.05rem;
         }
+        .content:has(#EN:checked) .result-group .vi{
+            color:#9ca3af; /* làm mờ VI khi chọn EN */
+        }
+
         .content:has(#adv:checked) .result-group .adv{
             background:#fef3c7;
             color:#92400e;
