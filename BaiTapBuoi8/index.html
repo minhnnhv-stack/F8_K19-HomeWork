@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+/* ===================== LAYOUT ===================== */
+        .app{
+           
+            width: 50%;
+            background-color:#eee;
+            font-size: 0;
+        }
+
+        .sidebar{
+            display: inline-block;
+            width: calc(30% - 16px); 
+            /* height: 100vh; */
+            background-color: #f5f5f5;
+            padding: 16px;
+            font-size: 16px;
+            vertical-align: top;
+        }
+
+        .preview{
+            display: inline-block;
+            width: calc(70% - 4px);
+            height: 100vh;
+            font-size: 16px;
+            vertical-align: top;
+        }
+
+/* ===================== INPUT (ẨN RADIO) ===================== */
+        input{
+            display: none;
+        }
+        .sidebar  label{
+        display: inline-block;
+        background-color: #ddd;
+        padding: 4px 8px;
+        }
+/* ===================== ACTIVE LABEL ===================== */
+    #bg-light:checked ~ .sidebar label[for="bg-light"],
+    #bg-gray:checked ~ .sidebar label[for="bg-gray"],
+    #bg-yellow:checked ~ .sidebar label[for="bg-yellow"],
+    #bg-blue:checked ~ .sidebar label[for="bg-blue"],
+    #bg-pink:checked ~ .sidebar label[for="bg-pink"],
+
+    #size-small:checked ~ .sidebar label[for="size-small"],
+    #size-medium:checked ~ .sidebar label[for="size-medium"],
+    #size-large:checked ~ .sidebar label[for="size-large"],
+
+    #typography-normal:checked ~ .sidebar label[for="typography-normal"],
+    #typography-uppercase:checked ~ .sidebar label[for="typography-uppercase"],
+
+    #name-color-dark:checked~ .sidebar label[for=name-color-dark],
+    #name-color-blue:checked~ .sidebar label[for=name-color-blue],
+    #name-color-green:checked~ .sidebar label[for=name-color-green],
+    #name-color-red:checked~ .sidebar label[for=name-color-red],
+
+    #alignment-left:checked ~ .sidebar label[for=alignment-left],
+    #alignment-center:checked ~ .sidebar label[for=alignment-center],
+    #alignment-right:checked ~ .sidebar label[for=alignment-right],
+
+    #job-size-small:checked ~ .sidebar label[for=job-size-small],
+    #job-size-medium:checked ~ .sidebar label[for=job-size-medium],
+    #job-size-large:checked ~ .sidebar label[for=job-size-large],
+
+    #job-letterSpacing-tight:checked ~.sidebar label[for=job-letterSpacing-tight],
+    #job-letterSpacing-normal:checked ~.sidebar label[for=job-letterSpacing-normal],
+    #job-letterSpacing-wide:checked ~.sidebar label[for=job-letterSpacing-wide],
+
+    #desc-size-small:checked ~.sidebar label[for=desc-size-small],
+    #desc-size-medium:checked ~.sidebar label[for=desc-size-medium],
+    #desc-size-large:checked ~.sidebar label[for=desc-size-large],
+
+    #desc-height-tight:checked ~.sidebar label[for=desc-height-tight],
+    #desc-height-normal:checked ~.sidebar label[for=desc-height-normal],
+    #desc-height-loose:checked ~.sidebar label[for=desc-height-loose],
+
+    #btn-color-dark:checked ~.sidebar label[for=btn-color-dark],
+    #btn-color-blue:checked ~.sidebar label[for=btn-color-blue],
+    #btn-color-light:checked ~.sidebar label[for=btn-color-light]
+    {
+        font-weight: bold;
+    }
+/* 1.màu nền hồ sơ */
+        #bg-light:checked ~ .preview{
+            background-color: white;
+        }
+        #bg-gray:checked ~ .preview{
+            background-color: lightgray;
+        }
+        #bg-yellow:checked ~ .preview{
+            background-color: lightyellow;
+        }
+        #bg-blue:checked ~ .preview{
+            background-color: lightblue;
+        }
+        #bg-pink:checked ~ .preview{
+            background-color: pink;
+        }
+
+/* 2.Kích thước tên */
+        #size-small:checked ~ .preview .name {
+            font-size: 2.2rem;
+        }
+        #size-medium:checked ~ .preview .name {
+        font-size: 2.4rem;
+        }
+        #size-large:checked ~ .preview .name{
+        font-size: 2.75rem;
+        }
+/* 3.Kiểu chữ tên */
+        #typography-uppercase:checked ~.preview .name
+        {
+            text-transform: uppercase;
+        }
+        #typography-normal:checked ~.preview .name{
+            text-transform: capitalize ;
+        }
+        
+/* 4.Màu chữ tên */
+        #name-color-dark:checked ~ .preview .name{
+            color:black
+        }
+        #name-color-blue:checked ~ .preview .name{
+            color:blue
+        }
+
+        #name-color-green:checked ~ .preview .name{
+            color:green
+        }
+
+        #name-color-red:checked ~ .preview .name{
+            color:red
+        }
+
+/* 5.Căn lề hồ sơ */
+        #alignment-left:checked ~ .preview{
+            text-align: left;
+        }
+        #alignment-center:checked ~ .preview{
+            text-align: center;
+        }
+        #alignment-right:checked ~ .preview{
+            text-align: right;
+        }
+/* 6.Kích thước nghiệp */
+        #job-size-small:checked ~.preview .job{
+         font-size: 0.9rem;
+        }
+        #job-size-medium:checked ~.preview .job{
+         font-size: 1rem;
+        }
+        #job-size-large:checked ~.preview .job{
+         font-size: 1.3rem;
+        }
+/* 7.Khoảng cách chữ nghề nghiệp */
+
+        #job-letterSpacing-tight:checked ~.preview .job{
+            letter-spacing: 0.03rem;
+        }
+        #job-letterSpacing-normal:checked ~.preview .job{
+            letter-spacing: 0.02rem;
+        }
+        #job-letterSpacing-wide:checked ~.preview .job{
+            letter-spacing: 0.18rem
+        }
+ /* 8. Kích thước mô tả */
+        #desc-size-small:checked~.preview .desc{
+            font-size: 0.9rem;
+        }
+        #desc-size-medium:checked~.preview .desc{
+            font-size: 1rem;
+        }
+        #desc-size-large:checked~.preview .desc{
+            font-size: 1.125rem;
+        }
+
+/* 9. Giãn dòng mô tả */
+        #desc-height-tight:checked ~ .preview .desc{
+            line-height: 1.6;
+        }
+        #desc-height-normal:checked ~ .preview .desc{
+            line-height: 1.8;
+        }
+        #desc-height-loose:checked ~ .preview .desc{
+            line-height: 2
+        }
+/* 10.Màu nút liên hệ */
+        #btn-color-dark:checked ~ .preview .contact-btn{
+            background-color: #1a1a1a;
+            color: #eeeeee;
+        }
+        #btn-color-blue:checked ~ .preview .contact-btn{
+            background-color: blue;
+              color: #eeeeee;
+        }
+        #btn-color-light:checked ~ .preview .contact-btn{
+            background-color:#f5f5f5;
+        }
+        .skills span{
+            display: inline-block;
+            background-color: #f0f0f0;
+            padding: 4px 8px;
+            margin: 4px;
+            font-size: 14px;
+        }
+        .hobbies span {
+            padding: 4px 8px;
+            /* margin: 4px; */
+            font-size: 14px;
+        }
+        .contact-btn {
+            padding: 8px 16px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+<!-- 1.màu nền hồ sơ -->
+        <input type="radio" name="bg" id="bg-light" >
+        <input type="radio" name="bg" id="bg-gray">
+        <input type="radio" name="bg" id="bg-yellow">
+        <input type="radio" name="bg" id="bg-blue">
+        <input type="radio" name="bg" id="bg-pink">
+<!-- 2.Kich thước tên -->
+        <input type="radio" name="sz" id="size-small">
+        <input type="radio" name="sz" id="size-medium">
+        <input type="radio" name="sz" id="size-large">
+<!-- 3.Kiểu chữ tên -->
+        <input type="radio" id="typography-normal" name="typo">
+        <input type="radio" id="typography-uppercase"name="typo">
+<!-- 4.Màu chữ tên -->
+        <input type="radio" name="nc" id="name-color-dark">
+        <input type="radio" name="nc" id="name-color-blue">
+        <input type="radio" name="nc" id="name-color-green">
+        <input type="radio" name="nc" id="name-color-red">
+<!-- 5.Căn lề hồ sơ -->
+        <input type="radio" name="ali" id="alignment-left">
+        <input type="radio" name="ali" id="alignment-center">
+        <input type="radio" name="ali" id="alignment-right">
+<!-- 6.Kích thước nghề nghiệp -->
+        <input type="radio" name="jbz" id="job-size-small">
+        <input type="radio" name="jbz" id="job-size-medium">
+        <input type="radio" name="jbz" id="job-size-large">
+<!-- 7.Khoảng cách chữ nghề nghiệp -->
+        <input type="radio" name="jbd" id="job-letterSpacing-tight">
+        <input type="radio" name="jbd" id="job-letterSpacing-normal">
+        <input type="radio" name="jbd" id="job-letterSpacing-wide">
+<!-- 8. Kích thước mô tả  -->
+        <input type="radio" name="descsize" id="desc-size-small">
+        <input type="radio" name="descsize" id="desc-size-medium">
+        <input type="radio" name="descsize" id="desc-size-large">
+<!-- 9. Giãn dòng mô tả  -->
+        <input type="radio" name="dh" id="desc-height-tight">
+        <input type="radio" name="dh" id="desc-height-normal">
+        <input type="radio" name="dh" id="desc-height-loose">
+<!-- 10.Màu nút liên hệ -->
+        <input type="radio" name="btnc" id="btn-color-dark">
+        <input type="radio" name="btnc" id="btn-color-blue">
+        <input type="radio" name="btnc" id="btn-color-light">
+
+         <div class="sidebar">
+            <h2>Tùy chỉnh hồ sơ </h2>
+            <h3>1. Màu nền hồ sơ</h3>
+            <label for="bg-light">light</label>
+            <label for="bg-gray">Gray</label>
+            <label for="bg-yellow">yellow</label>
+            <label for="bg-blue">Blue</label>
+            <label for="bg-pink">Pink</label>
+            <h3>2.Kich thước tên</h3>
+            <label for="size-small">Small</label>
+            <label for="size-medium">Medium</label>
+            <label for="size-large">Large</label>
+            <h3>3.Kiểu chữ tên</h3>
+            <label for="typography-normal">Normal</label>
+            <label for="typography-uppercase">Uppercase</label>
+            <h3>4.Màu chữ tên</h3>
+            <label for="name-color-dark">Dark</label>
+            <label for="name-color-blue">Blue</label>
+            <label for="name-color-green">Green</label>
+            <label for="name-color-red">Red</label>
+            <h3>5.Căn lề hồ sơ</h3>
+            <label for="alignment-left">Left</label>
+            <label for="alignment-center">Center</label>
+            <label for="alignment-right">Right</label>
+            <h3>6. Kích thước nghề nghiệp</h3>
+            <label for="job-size-small">Small</label>
+            <label for="job-size-medium">Medium</label>
+            <label for="job-size-large">Large</label>
+            <h3>7.Khoảng cách chữ nghề nghiệp</h3>
+            <label for="job-letterSpacing-tight">Tight</label>
+            <label for="job-letterSpacing-normal">Normal</label>
+            <label for="job-letterSpacing-wide">Wide</label>
+            <h3>8. Kích thước mô tả</h3>
+            <label for="desc-size-small">Small</label>
+            <label for="desc-size-medium">Medium</label>
+            <label for="desc-size-large">Large</label>
+            <h3>9. Giãn dòng mô tả </h3>
+            <label for="desc-height-tight">Tight</label>
+            <label for="desc-height-normal">Normal</label>
+            <label for="desc-height-loose">Loose</label>
+            <h3>10.Màu nút liên hệ</h3>
+            <label for="btn-color-dark">Dark</label>
+            <label for="btn-color-blue">Blue</label>
+            <label for="btn-color-light">Light</label>
+        </div>
+  
+        <div class="preview">
+       
+            
+            <h1 class="name">nguyễn minh khoa</h1>
+            
+            <h2 class="job">
+            Frontend Developer · Ho Chi Minh City
+            </h2>
+
+            <p class="desc">
+            Tôi là một lập trình viên Frontend với hơn 3 năm kinh nghiệm xây dựng giao diện web hiện đại, tập trung vào hiệu suất và trải nghiệm người dùng. Tôi yêu thích việc biến ý tưởng sáng tạo thành sản phẩm thực tế.
+            </p>
+
+            <div class="skills">
+            <p class="title">Kỹ năng</p>
+                <div class="skill-list">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>React</span>
+                    <span>Figma</span>
+                    <span>Git</span>
+                </div>
+            </div>
+
+            <div class="hobbies">
+                <p class="title">Sở thích</p>
+                <div class="hobby-list">
+                    <span>Nhiếp ảnh</span>
+                    <span>Đọc sách</span>
+                    <span>Du lịch</span>
+                    <span>Cà phê</span>
+                </div>
+            </div>
+
+            <button class="contact-btn">Liên hệ với tôi</button>
+
+        </div>
+
+    </div>
+   
+</html>
