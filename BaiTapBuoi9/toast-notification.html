@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+<style>
+    /* Ẩn checkbox thật đi  */
+    #toast-toggle{
+        display:none; 
+    }
+
+    /* Nút "Hiện thông báo" */
+    .open-btn {
+        display: inline-block;          /* để có thể set padding, width, height */
+        background: #333;               /* nền màu đen */
+        color: white;                  /* chữ màu trắng */
+        padding: 15px 25px;            /* tạo khoảng đệm trong */
+        font-weight: bold;             /* chữ đậm */
+        cursor: pointer;               /* khi hover hiện bàn tay */
+    }
+
+    /* Khối thông báo (toast) */
+    .toast {
+        display: none;                 /* mặc định ẩn */
+        background: #66bb6a;           /* nền xanh */
+        color: white;                  /* chữ trắng */
+        padding: 15px 20px;            /* khoảng đệm */
+        margin-left: 30px;             /* cách nút 1 khoảng */
+        width: 190px;              /* chiều rộng */
+    }
+
+    /* Nút đóng (dấu X) */
+    .close-btn {
+        display: inline-block;         /* để chỉnh kích thước */
+        background: rgba(0,0,0,0.2);   /* nền mờ */
+        color: white;                 /* chữ trắng */
+        font-size: 20px;              /* kích thước chữ */
+        width: 35px;                  /* chiều rộng */
+        height: 35px;                 /* chiều cao */
+        line-height: 35px;            /* căn giữa theo chiều dọc */
+        text-align: center;           /* căn giữa ngang */
+        margin-left: 20px;            /* cách chữ bên trái */
+        cursor: pointer;              /* hover thành bàn tay */
+    }
+
+    /* 
+        Khi checkbox được CHECK 
+        (~ là selector chọn phần tử phía sau cùng cấp)
+        thì hiển thị toast
+    */
+    #toast-toggle:checked ~ .toast{
+        display: inline-block;
+    }
+</style>
+
+</head>
+<body>
+
+   
+    <input type="checkbox" name="btn" id="toast-toggle">   
+    <label class="open-btn" for="toast-toggle">
+        Hiện thông báo
+    </label>
+    <div class="toast">
+        <span>🎉 Lưu thành công!</span>
+        <label class="close-btn" for="toast-toggle">×</label>
+    </div>
+
+</body>
+</html>

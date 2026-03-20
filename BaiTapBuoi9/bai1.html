@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: inline-block;
+            margin-right: 30px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .square{
+            border: 3px red solid;
+            width: 80px;
+            height: 80px;
+        }
+        .rectangle{
+            border: 3px blue solid;
+            width: 180px;
+            height: 80px;
+        }
+        .triangle{
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            width: 0px;
+            height: 0px;
+            border-bottom: 80px solid red;
+        }
+        .down-triangle{
+            border-left: 40px solid transparent ;
+            border-right: 40px solid transparent;
+            border-top: 80px solid orange;
+            width: 0px;
+            height: 0px;
+        }
+        .left-triangle{
+            border-right: 80px solid purple ;
+            border-bottom: 40px solid transparent;
+            border-top: 40px solid transparent;
+            width: 0px;
+            height: 0px;
+        }
+        .right-triangle{
+            border-left: 80px solid rgb(122, 92, 37) ;
+            border-bottom: 40px solid transparent;
+            border-top: 40px solid transparent;
+            width: 0px;
+            height: 0px;
+        }
+        .trapezium{
+             border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            width: 100px;
+            height: 0px;
+            border-bottom: 80px solid goldenrod;
+        }
+        .big-triangle{
+            border-left: 80px solid transparent;
+            border-right: 80px solid transparent;
+            width: 0px;
+            height: 0px;
+            border-bottom: 60px solid burlywood;
+        }
+        .acute-triangle{
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            width: 0px;
+            height: 0px;
+            border-bottom: 100px solid darkgrey;
+        }
+        .isosceles-triangle{
+            border-left: 80px solid transparent;
+            border-right: 80px solid transparent;
+            width: 0px;
+            height: 0px;
+            border-bottom: 80px solid darkgreen;
+        }
+        .right-arrow{
+            border-left: 70px solid rgb(38, 165, 150) ;
+            border-bottom: 35px solid transparent;
+            border-top: 35px solid transparent;
+            width: 0px;
+            height: 0px;
+        }
+        .left-arrow{
+            border-right: 70px solid purple ;
+            border-bottom: 35px solid transparent;
+            border-top: 35px solid transparent;
+            width: 0px;
+            height: 0px;
+        }
+        .ribbon {
+            display: inline-block;
+            align-items: center;
+        }
+
+        .rec {
+            width: 220px;
+            height: 80px;
+            background-color: rgb(108, 15, 15);
+            /* display: inline-block; */
+        }
+
+        .tri {
+            /* border-left: 40px solid transparent ; */
+            border-right: 40px solid transparent;
+            border-top: 80px solid rgb(108, 15, 15);
+            width: 0px;
+            height: 0px;
+            margin-left: 220px;
+            margin-top: -80px
+            /* display: inline-block; */
+        }
+        .tri2{
+            /* border-left: 40px solid transparent; */
+            border-right: 40px solid transparent;
+            width: 0px;
+            height: 0px;
+            border-bottom: 80px solid rgb(108, 15, 15);
+            margin-left: 220px;
+            margin-top: -80px
+           
+            /* display: inline-block; */
+        }
+        .F{
+            display: inline-block;
+            margin-right: 30px;
+        }
+        .eight{
+             display: inline-block;
+        }
+        .square1{
+            border: 30px salmon solid;
+            border-right: 0px transparent;
+            border-bottom: 15px solid salmon;
+            width: 100px;
+            height: 80px;
+            
+        }
+        .square2{
+            border: 30px salmon solid;
+            border-right: 0px transparent;
+            border-top: 15px salmon solid;
+            border-bottom: 30px transparent solid;
+            width: 100px;
+            height: 80px;
+           
+        }
+        .half-tri{
+             border-left: 30px solid transparent;
+            /* border-right: 80px solid transparent */
+            width: 0px;
+            height: 0px;
+            border-bottom: 30px solid salmon;
+            margin-top: -31px;
+        }
+        .square3{
+            border: 30px salmon solid;
+            width: 100px;
+            height: 80px;
+            border-bottom: 0px transparent;
+
+            
+        }
+        .square4{
+            border: 30px salmon solid;
+            width: 100px;
+            height: 80px;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <div class="square"></div>
+        <p>1.Hình vuông</p>
+    </div>
+    <div class="container">
+        <div class="rectangle"></div>
+        <p>2.Hình chữ nhật</p>
+    </div>
+    <div class="container">
+        <div class="triangle"></div>
+        <p>3.Hình tam giác lên</p>
+    </div>
+    <div class="container">
+        <div class="down-triangle"></div>
+         <p>4.Hình tam giác xuống</p>
+    </div>
+    <div class="container">
+        <div class="left-triangle"></div>
+         <p>5.Hình tam giác trái</p>
+    </div>
+    <div class="container">
+        <div class="right-triangle"></div>
+         <p>6.Hình tam giác phải</p>
+    </div>
+    <div class="container">
+        <div class="trapezium"></div>
+        <p>7.Hình thang </p>
+    </div>
+    <div class="container">
+        <div class="big-triangle"></div>
+         <p>8.Hình tam giác rộng</p>
+    </div>
+    <div class="container">
+        <div class="acute-triangle"></div>
+         <p>9.Hình tam giác nhọn</p>
+    </div>
+    <div class="container">
+        <div class="isosceles-triangle"></div>
+         <p>10.Hình tam giác cân</p>
+    </div>
+    <div class="container">
+        <div class="right-arrow"></div>
+         <p>11.Hình tam giác phải</p>
+    </div>
+    <div class="container">
+        <div class="left-arrow"></div>
+         <p>12.Hình tam giác trái</p>
+    </div>
+    <div class="container">
+        <div class="ribbon">
+        <div class="rec"></div>
+        <div class="tri"></div>
+        <div class="tri2"></div>
+
+    </div>
+        <p>13.Ribbon / Lá cờ </p>
+    </div>
+    
+    <div class="container">
+        <div class="F8">
+            <div class="F">
+                <div class="square1"></div>
+                <div class="square2"></div>
+                <div class="half-tri"></div>
+            </div>
+            <div class="eight">
+                <div class="square3"></div>
+                <div class="square4"></div>
+            </div>
+            <p>14.F8</p>
+        </div>
+    </div>
+</body>
+</html>
