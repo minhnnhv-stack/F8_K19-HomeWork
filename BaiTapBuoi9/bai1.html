@@ -97,79 +97,70 @@
         }
 
         .rec {
-            width: 220px;
-            height: 80px;
-            background-color: rgb(108, 15, 15);
-            /* display: inline-block; */
-        }
-
-        .tri {
-            /* border-left: 40px solid transparent ; */
+            width: 180px;
+            height: 0;
+            border-top: 40px solid red;
+            border-bottom: 40px solid red;
             border-right: 40px solid transparent;
-            border-top: 80px solid rgb(108, 15, 15);
-            width: 0px;
-            height: 0px;
-            margin-left: 220px;
-            margin-top: -80px
-            /* display: inline-block; */
-        }
-        .tri2{
-            /* border-left: 40px solid transparent; */
-            border-right: 40px solid transparent;
-            width: 0px;
-            height: 0px;
-            border-bottom: 80px solid rgb(108, 15, 15);
-            margin-left: 220px;
-            margin-top: -80px
-           
-            /* display: inline-block; */
         }
         .F{
             display: inline-block;
             margin-right: 30px;
+            vertical-align: top;
         }
         .eight{
              display: inline-block;
+             /* vertical-align: top; */
         }
-        .square1{
-            border: 30px salmon solid;
-            border-right: 0px transparent;
-            border-bottom: 15px solid salmon;
-            width: 100px;
-            height: 80px;
-            
-        }
-        .square2{
-            border: 30px salmon solid;
-            border-right: 0px transparent;
-            border-top: 15px salmon solid;
-            border-bottom: 30px transparent solid;
-            width: 100px;
-            height: 80px;
-           
-        }
-        .half-tri{
-             border-left: 30px solid transparent;
-            /* border-right: 80px solid transparent */
-            width: 0px;
-            height: 0px;
-            border-bottom: 30px solid salmon;
-            margin-top: -31px;
-        }
-        .square3{
-            border: 30px salmon solid;
-            width: 100px;
-            height: 80px;
-            border-bottom: 0px transparent;
 
-            
+        .f-vertical {
+            width: 0;
+            height: 220px;
+            border-left: 35px solid red;
+            /* margin-top: 100px; */
         }
-        .square4{
-            border: 30px salmon solid;
-            width: 100px;
-            height: 80px;
-           
+        .f-top-bar {
+            width: 140px;
+            height: 0;
+            border-top: 35px solid red;
+            margin-top: -220px; 
         }
+        .f-middle-bar{
+            width: 140px;
+            height: 0;
+            border-top: 35px solid red ;
+            margin-top: 60px;
+        }
+        .eight-vertical{
+            width: 0;
+            height: 220px;
+            border-left: 35px solid red;
+        }
+        .eight-top-bar{
+            width: 140px;
+            height: 0;
+            border-top: 35px solid red;
+            margin-top: -220px; 
+        }
+        .eight-middle-bar{
+            width: 140px;
+            height: 0;
+            border-top: 35px solid red;
+            margin-top: 60px;
+        }
+        .eight-bottom-bar{
+            width: 140px;
+            height: 0;
+            border-top: 35px solid red;
+            margin-top: 60px;
+        }
+          .eight-vertical-right{
+            width: 0;
+            height: 220px;
+            border-left: 35px solid red;
+            margin-left: 105px;
+            margin-top: -220px;
+          }
     </style>
 </head>
 <body>
@@ -224,26 +215,26 @@
     <div class="container">
         <div class="ribbon">
         <div class="rec"></div>
-        <div class="tri"></div>
-        <div class="tri2"></div>
-
     </div>
         <p>13.Ribbon / Lá cờ </p>
     </div>
     
     <div class="container">
-        <div class="F8">
+        <div class="f8-large">
             <div class="F">
-                <div class="square1"></div>
-                <div class="square2"></div>
-                <div class="half-tri"></div>
+                <div class="f-vertical"></div>
+                <div class="f-top-bar"></div>
+                <div class="f-middle-bar"></div>
             </div>
             <div class="eight">
-                <div class="square3"></div>
-                <div class="square4"></div>
+                <div class="eight-vertical"></div>
+                <div class="eight-top-bar"></div>
+                <div class="eight-middle-bar"></div>
+                <div class="eight-bottom-bar"></div>
+                <div class="eight-vertical-right"></div>
             </div>
-            <p>14.F8</p>
         </div>
+        <p>14.F8</p>
     </div>
 </body>
 </html>

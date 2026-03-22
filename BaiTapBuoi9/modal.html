@@ -7,24 +7,22 @@
     <style>
         /* Nút mở modal */
         .open-btn {
-            display: block;          /* hiển thị dạng khối */
+            display: inline-block;          /* hiển thị dạng khối */
             background-color: #3b82f6;      /* màu nền xanh */
             color: #ffffff;                 /* màu chữ trắng */
             padding: 15px 25px;             /* khoảng cách bên trong (trên-dưới / trái-phải) */
             font-weight: bold;              /* chữ in đậm */
             cursor: pointer;               /* đổi con trỏ thành hình bàn tay khi hover */
-            width: 80px;
             margin-bottom: 30px;
         }
 
         /* Lớp phủ nền khi mở modal */
         .overlay{
             display:none;                  /* mặc định ẩn */
-            width: 500px;                  /* chiều rộng */
-            height: 500px;                 /* chiều cao */
+            width: 100%;                  /* chiều rộng */
+            height: 100%;                 /* chiều cao */
             background-color: rgba(0, 0, 0, 0.5); /* nền đen mờ (opacity 0.5) */
-            padding-top: 30px;
-            padding-left: 30px;
+            text-align: center
         }
 
         /* Khung modal */
@@ -32,7 +30,9 @@
             background-color: #ffffff;     /* nền trắng */
             width: 300px;                 /* chiều rộng modal */
             height: 150px;                /* chiều cao modal */
-            padding: 15px 20px;           /* khoảng cách bên trong */
+            padding: 100px 0px;          /* khoảng cách bên trong */
+            margin: 20px;
+            display: inline-block       
         }
 
         /* Nút đóng modal */
