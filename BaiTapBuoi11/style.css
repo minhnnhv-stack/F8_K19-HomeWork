@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding:0 ;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+.container{
+    border: 1px solid gray;
+    padding: 15px;
+    margin: 10px;
+}
+.container h2{
+    margin: 10px ;
+}
+.mother-box{
+    border: 3px solid red;
+    height:300px ;
+     display: flex;
+}
+.box1, .box2, .box3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    color: aliceblue;
+    background-color: blue;
+    font-weight: bold;
+}
+/* lessson1 */
+.lesson-1{
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* lessson2 */
+.lesson-2{
+    
+    align-items: center; 
+    justify-content: space-between;
+    flex-direction: row-reverse;
+
+}
+/* lessson3 */
+.lesson-3{
+    align-items: center;
+    flex-direction: column;
+}
+.lesson-3 .box1{
+    margin-bottom: 20px;
+}
+.lesson-3 .box2{
+    margin-bottom: 50px;
+}
+
+/* lessson4 */
+
+.lesson-4{
+    align-items: center;
+    justify-content: center;
+}
+.lesson-4 .box1{
+    margin-right: 10px;
+}
+.lesson-4 .box2{
+    margin-right: 40px;
+}
+/* lessson5 */
+.lesson-5{
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: center;
+}
+/* lessson6 */
+.lesson-6{
+    justify-content: space-between;
+}
+.lesson-6 .box1,
+.lesson-6 .box2,
+.lesson-6 .box3 {
+    margin-top: 10px;
+}
+/* lessson 7 */
+.lesson-7{
+    align-items: center;
+    flex-direction: column;
+}
+.lesson-7 .box1{
+    margin-bottom:  60px;
+}
+.lesson-7 .box2{
+    margin-bottom: 20px;
+}
+/* lessson 8 */
+.lesson-8{
+    align-items: center;
+}
+.lesson-8 .box2{
+    margin:  auto;
+}
+/* lessson 9 */
+.lesson-9{
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+}
+.lesson-9 .box1{
+    margin-top: -90px;
+}
+.lesson-9 .box2{
+    margin: 20px ;
+}
+.lesson-9 .box3{
+    margin-top: 90px;
+}
+
+/* lessson 10 */
+.lesson-10 .box2{
+    margin:auto;
+}
+.lesson-10 .box3{
+    margin-top: auto;
+}
