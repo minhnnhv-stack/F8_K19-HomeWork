@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #ebf5fe;
+    padding: 40px;
+    color:#666666;
+    font-family: 'Roboto', sans-serif;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.card {
+    display: flex;
+    flex: 1 1 calc(33.33% - 20px);
+    padding: 30px;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    flex-direction: column;
+}
+.card-header{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.icon{
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+    color:#ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #333333;
+    line-height: 1.3;
+    /* margin-top: 20px; */
+    margin-bottom: 15px;
+}
+.description{
+    font-size: 15px;
+    font-weight:400;
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+
+}
+.card-body a{
+    font-size: 15px;
+    font-weight: 500;
+    color: #2196f3;
+    text-decoration: none;
+
+}
+.card-body a:hover{
+    text-decoration: underline;
+}
+
+/* //css rieng */
+.red .icon{
+    background-color: #ff6b6b;
+}
+.green .icon{
+    background-color: #4ecdc4;
+}
+.yellow .icon{
+    background-color: #f9a825;
+}
+.blue .icon{
+    background-color: #5e9cff;
+}
+.purple .icon{
+    background-color: #9b59b6;
+}
+.lime .icon{
+    background-color: #7cb342;
+}
+
+.red:hover {
+    border: 3px solid #ff6b6b;
+}
+.green:hover {
+    border: 3px solid #4ecdc4;
+}.yellow:hover {
+    border: 3px solid #f9a825;
+}.blue:hover {
+    border: 3px solid #5e9cff;
+}.purple:hover {
+    border: 3px solid #9b59b6;
+}.lime:hover {
+    border: 3px solid #7cb342;
+}
