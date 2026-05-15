@@ -29,44 +29,51 @@ const orders = [
   },
 ];
 
-function getBestSellingProduct(products, orders) {
-  let productRevenues = [];
-  for (let i = 0; i < products.length; i++) {
-    productRevenues[i] = 0;
+function findTopProduct(products, orders) {
+  // 1. Tạo HashMap lưu doanh thu: { productId: totalRevenue }
+  const revenueMap = {};
+
+  // 2. Tạo nhanh một bảng tra cứu giá sản phẩm: { id: price }
+  const priceMap = {};
+  for (const p of products) {
+    priceMap[p.id] = p.price;
   }
 
-  for (let i = 0; i < orders.length; i++) {
-    let currentOrder = orders[i];
-    let orderItems = currentOrder.items;
+  // 3. Duyệt qua các đơn hàng để tính doanh thu vào HashMap
+  for (const order of orders) {
+    for (const item of order.items) {
+      const pid = item.productId;
+      const amount = item.quantity * (priceMap[pid] || 0);
 
-    for (let j = 0; j < orderItems.length; j++) {
-      let currentItem = orderItems[j];
-
-      for (let k = 0; k < products.length; k++) {
-        if (products[k].id === currentItem.productId) {
-          let itemRevenue = products[k].price * currentItem.quantity;
-          productRevenues[k] += itemRevenue;
-        }
+      // Tích lũy doanh thu vào HashMap
+      if (revenueMap[pid]) {
+        revenueMap[pid] += amount;
+      } else {
+        revenueMap[pid] = amount;
       }
     }
   }
 
-  let maxRevenue = productRevenues[0];
-  let maxIndex = 0;
+  // 4. Tìm sản phẩm có doanh thu lớn nhất từ HashMap
+  let maxRevenue = -1;
+  let topProductId = null;
 
-  for (let i = 1; i < productRevenues.length; i++) {
-    if (productRevenues[i] > maxRevenue) {
-      maxRevenue = productRevenues[i];
-      maxIndex = i;
+  for (const pid in revenueMap) {
+    if (revenueMap[pid] > maxRevenue) {
+      maxRevenue = revenueMap[pid];
+      topProductId = parseInt(pid);
     }
   }
 
+  // 5. Tìm lại thông tin tên sản phẩm để trả về
+  const topProductInfo = products.find((p) => p.id === topProductId);
+
   return {
-    name: products[maxIndex].name,
+    name: topProductInfo ? topProductInfo.name : "Unknown",
     totalRevenue: maxRevenue,
   };
 }
 
-const result = getBestSellingProduct(products, orders);
-console.log("Sản phẩm có doanh thu cao nhất là:", result.name);
-console.log("Với tổng số tiền là:", result.totalRevenue);
+// Chạy thử với dữ liệu của bạn
+const result = findTopProduct(products, orders);
+console.log("Kết quả:", result);

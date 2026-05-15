@@ -1,9 +1,10 @@
 //Bai1;
-const numbers = [9, 8, 3, 5, 6, 2, 7, 9];
+const numbers = [9, 8, 3, 5, 6, 2, 7, 9, -3, -5];
+const numbers2 = [-9, -8, -3, -5, -6, -2, -7, -9, -3, -5];
 
 const findSecondLargestValue = (arr) => {
-  let max = 0;
-  let secondMax = 0;
+  let max = -Infinity;
+  let secondMax = -Infinity;
   for (const num of arr) {
     if (num > max) {
       secondMax = max;
@@ -14,7 +15,7 @@ const findSecondLargestValue = (arr) => {
   }
   return secondMax;
 };
-console.log("Bài 1: Kết quả=", findSecondLargestValue(numbers));
+console.log("Bài 1: Kết quả=", findSecondLargestValue(numbers2));
 
 //Bai2
 const classA = [15, 2, 8, 10];
