@@ -30,22 +30,16 @@ const orders = [
 ];
 
 function findTopProduct(products, orders) {
-  // 1. Tạo HashMap lưu doanh thu: { productId: totalRevenue }
   const revenueMap = {};
-
-  // 2. Tạo nhanh một bảng tra cứu giá sản phẩm: { id: price }
   const priceMap = {};
   for (const p of products) {
     priceMap[p.id] = p.price;
   }
 
-  // 3. Duyệt qua các đơn hàng để tính doanh thu vào HashMap
   for (const order of orders) {
     for (const item of order.items) {
       const pid = item.productId;
       const amount = item.quantity * (priceMap[pid] || 0);
-
-      // Tích lũy doanh thu vào HashMap
       if (revenueMap[pid]) {
         revenueMap[pid] += amount;
       } else {
@@ -54,7 +48,6 @@ function findTopProduct(products, orders) {
     }
   }
 
-  // 4. Tìm sản phẩm có doanh thu lớn nhất từ HashMap
   let maxRevenue = -1;
   let topProductId = null;
 
@@ -65,7 +58,6 @@ function findTopProduct(products, orders) {
     }
   }
 
-  // 5. Tìm lại thông tin tên sản phẩm để trả về
   const topProductInfo = products.find((p) => p.id === topProductId);
 
   return {
@@ -74,6 +66,5 @@ function findTopProduct(products, orders) {
   };
 }
 
-// Chạy thử với dữ liệu của bạn
 const result = findTopProduct(products, orders);
 console.log("Kết quả:", result);
