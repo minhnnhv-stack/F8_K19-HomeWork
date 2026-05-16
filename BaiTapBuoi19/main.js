@@ -29,42 +29,31 @@ const orders = [
   },
 ];
 
-function findTopProduct(products, orders) {
-  const revenueMap = {};
-  const priceMap = {};
-  for (const p of products) {
-    priceMap[p.id] = p.price;
-  }
-
-  for (const order of orders) {
-    for (const item of order.items) {
-      const pid = item.productId;
-      const amount = item.quantity * (priceMap[pid] || 0);
-      if (revenueMap[pid]) {
-        revenueMap[pid] += amount;
+const findTopProduct = (products, orders) => {
+  const productQuantities = {};
+  orders.forEach((order) => {
+    order.items.forEach((item) => {
+      if (productQuantities[item.productId]) {
+        productQuantities[item.productId] += item.quantity;
       } else {
-        revenueMap[pid] = amount;
+        productQuantities[item.productId] = item.quantity;
       }
-    }
-  }
+    });
+  });
 
-  let maxRevenue = -1;
-  let topProductId = null;
+  const productRevenues = products.map((product) => {
+    const totalQuantity = productQuantities[product.id] || 0;
+    return {
+      id: product.id,
+      name: product.name,
+      totalRevenue: totalQuantity * product.price,
+    };
+  });
 
-  for (const pid in revenueMap) {
-    if (revenueMap[pid] > maxRevenue) {
-      maxRevenue = revenueMap[pid];
-      topProductId = parseInt(pid);
-    }
-  }
-
-  const topProductInfo = products.find((p) => p.id === topProductId);
-
-  return {
-    name: topProductInfo ? topProductInfo.name : "Unknown",
-    totalRevenue: maxRevenue,
-  };
-}
-
-const result = findTopProduct(products, orders);
-console.log("Kết quả:", result);
+  let topProduct = productRevenues[0];
+  productRevenues.forEach((proRve) => {
+    if (proRve.totalRevenue > topProduct.totalRevenue) topProduct = proRve;
+  });
+  return topProduct;
+};
+console.log(findTopProduct(products, orders));
