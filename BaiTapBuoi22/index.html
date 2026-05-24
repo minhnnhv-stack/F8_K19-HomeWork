@@ -21,7 +21,6 @@
     <div id="invoice-root" class="w-full"></div>
 
     <script>
-      // 1. Data mẫu
       const data = {
         meta: {
           invoiceNo: "WM-20260521-0001",
@@ -56,12 +55,10 @@
         },
       };
 
-      // 2. Format tiền tệ
       const formatCurrency = (amount) => {
         return new Intl.NumberFormat("vi-VN").format(amount) + " đ";
       };
 
-      // 3. Hàm Render Hóa Đơn bằng Tailwind CSS
       const renderInvoice = (invoiceData) => {
         const root = document.getElementById("invoice-root");
 
