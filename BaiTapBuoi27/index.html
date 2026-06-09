@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý Khách hàng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-gray-100 p-6 font-sans">
+    <div class="max-w-7xl mx-auto bg-white p-6 rounded-lg shadow-md">
+      <h1 class="text-2xl font-bold mb-6 text-gray-800">Quản lý Khách hàng</h1>
+
+      <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-6">
+        <h2 id="formTitle" class="text-lg font-semibold mb-4 text-gray-700">
+          Thêm mới Khách hàng
+        </h2>
+        <div id="formContainer"></div>
+        <div class="mt-4 flex gap-2" id="btn-container"></div>
+      </div>
+
+      <div class="overflow-x-auto" id="tableContainer"></div>
+    </div>
+  </body>
+  <script src="js/main.js" type="module"></script>
+</html>
