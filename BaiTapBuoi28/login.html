@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="min-h-screen flex items-center justify-center bg-gray-100">
+      <div class="bg-white p-8 rounded-lg shadow-md w-96">
+        <h2 class="text-2xl font-bold mb-6 text-center">Đăng nhập</h2>
+        <form id="loginForm" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium" for="username"
+              >Username</label
+            >
+            <input
+              value="emilys"
+              type="text"
+              id="username"
+              class="w-full border p-2 rounded mt-1"
+              required
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium" for="password"
+              >Password</label
+            >
+            <input
+              value="emilyspass"
+              type="password"
+              id="password"
+              class="w-full border p-2 rounded mt-1"
+              required
+            />
+          </div>
+          <button
+            id="login-btn"
+            type="submit"
+            class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
+          >
+            Đăng nhập
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
