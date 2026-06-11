@@ -44,7 +44,7 @@ const refeshTokenReq = async () => {
       },
       body: JSON.stringify({
         refreshToken: refreshToken,
-        expiresInMins: 30,
+        expiresInMins: 1,
       }),
     });
     if (!response.ok) {
@@ -60,6 +60,20 @@ const refeshTokenReq = async () => {
     console.log(err);
   }
 };
+const handelTestApiExpri = async () => {
+  const testApiBtn = document.getElementById("testApiBtn");
+  testApiBtn.addEventListener("click", async (event) => {
+    console.log("--- BẮT ĐẦU GỌI API TỪ NÚT BẤM ---");
+    const data = await getReq();
+    if (data) {
+      console.log("✅ Dữ liệu lấy về thành công:", data);
+      alert("Gọi API thành công! Dữ liệu đã được in ra Console.");
+    }
+
+    console.log("-----------------------------------");
+  });
+};
+
 const handelProfile = async () => {
   const data = await getReq();
 
@@ -87,3 +101,4 @@ const handelProfile = async () => {
   userImage.src = data.image;
 };
 handelProfile();
+handelTestApiExpri();
