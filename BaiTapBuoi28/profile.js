@@ -17,8 +17,7 @@ const getReq = async () => {
         return getReq();
       } else {
         localStorage.clear();
-        window.location.href =
-          "/data/codeSpace/F8-FullStack/F8_K19-HomeWork/BaiTapBuoi28/login.html";
+        window.location.href = "http://127.0.0.1:5500/BaiTapBuoi28/login.html";
         return;
       }
     }
