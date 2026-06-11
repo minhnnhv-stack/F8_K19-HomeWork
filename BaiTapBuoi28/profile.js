@@ -1,5 +1,7 @@
 const getReq = async () => {
   try {
+    const accessToken = localStorage.getItem("access_token");
+    console.log("Access Token:", accessToken);
     const response = await fetch("https://dummyjson.com/auth/me", {
       method: "GET",
       headers: {
@@ -7,18 +9,58 @@ const getReq = async () => {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
     });
+
+    if (response.status === 401 || response.status === 500) {
+      console.log("Token Expired");
+      const isRefreshed = await refeshTokenReq();
+      if (isRefreshed) {
+        return getReq();
+      } else {
+        localStorage.clear();
+        window.location.href =
+          "/data/codeSpace/F8-FullStack/F8_K19-HomeWork/BaiTapBuoi28/login.html";
+        return;
+      }
+    }
     if (!response.ok) {
       const error = await response.json();
       console.log(error);
-      return (res = await response.json());
-      console.log(res);
+      return;
     }
-    return await response.json();
+
+    // 6. Trả về dữ liệu thành công
+    const data = await response.json();
+    return data;
   } catch (err) {
     console.log(err);
   }
 };
+const refeshTokenReq = async () => {
+  try {
+    const refreshToken = localStorage.getItem("refresh_token");
+    const response = await fetch("https://dummyjson.com/auth/refresh", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        refreshToken: refreshToken,
+        expiresInMins: 30,
+      }),
+    });
+    if (!response.ok) {
+      consloe.log("Refresh Token Error");
+      return false;
+    }
 
+    const data = await response.json();
+    localStorage.setItem("refresh_token", data.refreshToken);
+    localStorage.setItem("access_token", data.accessToken);
+    return true;
+  } catch (err) {
+    console.log(err);
+  }
+};
 const handelProfile = async () => {
   const data = await getReq();
 
